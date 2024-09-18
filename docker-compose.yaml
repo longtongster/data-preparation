@@ -1,0 +1,30 @@
+services:
+  app:
+    user: "${USER_ID:-1000}"
+    hostname: "${HOST_NAME:-emkademy}"
+    image: cybulde-data-preperation
+    container_name: cybulde-data-preparation-container
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        USER_NAME: "${USER_NAME:-kyuksel}"
+        USER_ID: "${USER_ID:-1000}"
+    volumes:
+      - ./:/app/
+      # line belowe is commented out since I am using AWS instead of GCP
+      # - ~/.config/gcloud/:/home/${USER_NAME:-kyuksel}/.config/gcloud
+      # since we try to use s3 for storage we need access to the user credentials
+      # create a user with programmatic access, give the user the correct s3 permission
+      # configure the aws cli. Test if `aws s3 ls` works with no errors
+      - ~/.aws/:/home/${USER_NAME}/.aws/
+      # Here we keep the ssh key to autenticate to github
+      - ~/.ssh/:/home/${USER_NAME}/.ssh/
+
+    ports:
+      - 8080:8080
+
+    ipc: host
+    init: true
+
+
