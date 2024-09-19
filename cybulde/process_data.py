@@ -8,12 +8,12 @@ def process_data(config: Config) -> None:
     print(config)
     version = "v1"
     data_local_save_dir = "./data/raw"
-    dvc_remote_repo = "https://github.com/longtongster/project_template_ml.git"
+    dvc_remote_repo = "git@github.com:longtongster/project_template_ml.git"
     dvc_data_folder = "./data/raw"
     github_user_name = "longtongster"
     github_access_token = "no_way"
 
-    run_command()
+    run_command(version, data_local_save_dir, dvc_remote_repo, dvc_data_folder, github_user_name, github_access_token)
 
 
 if __name__ == "__main__":
