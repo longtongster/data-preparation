@@ -6,9 +6,9 @@ from utils.data_utils import run_command
 @get_config(config_path="../configs", config_name="config")
 def process_data(config: Config) -> None:
     print(config)
-    version = "v1"
+    version = "v3"
     data_local_save_dir = "./data/raw"
-    dvc_remote_repo = "git@github.com:longtongster/project_template_ml.git"
+    dvc_remote_repo = "git@github.com:longtongster/project_template.git"
     dvc_data_folder = "./data/raw"
     github_user_name = "longtongster"
     github_access_token = "no_way"
