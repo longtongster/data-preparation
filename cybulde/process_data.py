@@ -7,7 +7,7 @@ from utils.aws_secret import get_secret
 @get_config(config_path="../configs", config_name="data_processing_config")
 def process_data(config: DataProcessingConfig) -> None:
     print(config)
-    config.version = "v5"
+    config.version = "v6"
     # data_local_save_dir = config.data_local_save_dir
     # dvc_remote_repo = config.dvc_remote_repo
     # dvc_data_folder = config.dvc_data_folder

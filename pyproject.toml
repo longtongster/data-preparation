@@ -17,9 +17,12 @@ gcsfs = "^2024.9"
 google_cloud_secret_manager = "~=2.16"
 fastparquet = "~=2023.4"
 dvc = {version = "^3.5", extras = ["gdrive", "gs", "s3", "dvc-s3"]}
-dask = {version = "~2023.5", extras=["complete"]}
-distributed = "~=2023.5"
-dask-ml = "~=2023.3"
+#dask = {version = "~2023.5", extras=["complete"]}
+dask = {version = "*", extras=["complete"]}
+#distributed = "~=2023.5"
+distributed = "*"
+#dask-ml = "~=2023.3"
+dask-ml = "*"
 dask-cloudprovider = {version = "2022.10", extras =["gcp","aws"]}
 awscli = "^1"
 boto3 = "*"

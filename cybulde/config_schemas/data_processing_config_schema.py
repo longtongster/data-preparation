@@ -6,7 +6,7 @@ from cybulde.utils.aws_secret import get_secret
 
 @dataclass
 class DataProcessingConfig:
-    version: str = "1" #MISSING
+    version: str = MISSING
     data_local_save_dir: str = "./data/raw"
     dvc_remote_repo: str = "https://github.com/longtongster/project_template.git"
     dvc_data_folder: str = "./data/raw"

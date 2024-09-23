@@ -28,7 +28,7 @@ RUN addgroup --system --gid ${USER_ID} ${USER_NAME} \
 RUN chown -R ${USER_NAME}:${USER_NAME} ${HOME}
 RUN mkdir -p /app && chown -R ${USER_NAME}:${USER_NAME} /app /tmp
 
-RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.7.1
+RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.4.2
 
 USER ${USER_NAME}
 
@@ -44,13 +44,13 @@ RUN poetry config virtualenvs.create false \
 USER root
 COPY ./docker/scripts/* /
 RUN chown -R ${USER_NAME} /*.sh && chmod +x /*.sh
+RUN chown -R ${USER_NAME} ${HOME}/.local
 USER ${USER_NAME}
 
 RUN git config --global user.email "sacha.van.weeren@gmail.com" \
     && git config --global user.name "longtongster"
 
 RUN python3.10 -m nltk.downloader stopwords && python3.10 -m nltk.downloader punkt
-
 
 COPY . /app/
 CMD ["/startup-script.sh"]

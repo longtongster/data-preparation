@@ -214,13 +214,13 @@ files = [
 
 [[package]]
 name = "anyio"
-version = "4.5.0"
+version = "4.6.0"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "anyio-4.5.0-py3-none-any.whl", hash = "sha256:fdeb095b7cc5a5563175eedd926ec4ae55413bb4be5770c424af0ba46ccb4a78"},
-    {file = "anyio-4.5.0.tar.gz", hash = "sha256:c5a275fe5ca0afd788001f58fca1e69e29ce706d746e317d660e21f70c530ef9"},
+    {file = "anyio-4.6.0-py3-none-any.whl", hash = "sha256:c7d2e9d63e31599eeb636c8c5c03a7e108d73b345f064f1c19fdc87b79036a9a"},
+    {file = "anyio-4.6.0.tar.gz", hash = "sha256:137b4559cbb034c477165047febb6ff83f390fc3b20bf181c1fc0a728cb8beeb"},
 ]
 
 [package.dependencies]
@@ -485,13 +485,13 @@ lxml = ["lxml"]
 
 [[package]]
 name = "billiard"
-version = "4.2.0"
+version = "4.2.1"
 description = "Python multiprocessing fork with improvements and bugfixes"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "billiard-4.2.0-py3-none-any.whl", hash = "sha256:07aa978b308f334ff8282bd4a746e681b3513db5c9a514cbdd810cbbdc19714d"},
-    {file = "billiard-4.2.0.tar.gz", hash = "sha256:9a3c3184cb275aa17a732f93f65b20c525d3d9f253722d26a82194803ade5a2c"},
+    {file = "billiard-4.2.1-py3-none-any.whl", hash = "sha256:40b59a4ac8806ba2c2369ea98d876bc6108b051c227baffd928c644d15d8f3cb"},
+    {file = "billiard-4.2.1.tar.gz", hash = "sha256:12b641b0c539073fc8d3f5b8b7be998956665c4233c7c1fcd66a7e677c4fb36f"},
 ]
 
 [[package]]
@@ -978,17 +978,13 @@ test = ["pytest"]
 
 [[package]]
 name = "configobj"
-version = "5.0.8"
+version = "5.0.9"
 description = "Config file reading, writing and validation."
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+python-versions = ">=3.7"
 files = [
-    {file = "configobj-5.0.8-py2.py3-none-any.whl", hash = "sha256:a7a8c6ab7daade85c3f329931a807c8aee750a2494363934f8ea84d8a54c87ea"},
-    {file = "configobj-5.0.8.tar.gz", hash = "sha256:6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"},
+    {file = "configobj-5.0.9.tar.gz", hash = "sha256:03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"},
 ]
-
-[package.dependencies]
-six = "*"
 
 [[package]]
 name = "contourpy"
@@ -1237,39 +1233,40 @@ test-randomorder = ["pytest-randomly"]
 
 [[package]]
 name = "dask"
-version = "2023.5.1"
+version = "2024.9.0"
 description = "Parallel PyData with Task Scheduling"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "dask-2023.5.1-py3-none-any.whl", hash = "sha256:f68206343d4b32177a3ee65cea22f32c7e014cec98bb0ec85c1840789bde81db"},
-    {file = "dask-2023.5.1.tar.gz", hash = "sha256:d1b988526012ac2896ace302347e23c003504f8baa69d106b75bd442f089495a"},
+    {file = "dask-2024.9.0-py3-none-any.whl", hash = "sha256:ceede9cfd418178a01ec3d11a0cde3f46678bd4a292ba84b57bbb401ce3f1cb8"},
+    {file = "dask-2024.9.0.tar.gz", hash = "sha256:bfbe5b6c3b7937426539be27029800178ce63cea4da8d7e7de836a98384aa1d6"},
 ]
 
 [package.dependencies]
-bokeh = {version = ">=2.4.2", optional = true, markers = "extra == \"diagnostics\""}
-click = ">=8.0"
-cloudpickle = ">=1.5.0"
-distributed = {version = "2023.5.1", optional = true, markers = "extra == \"distributed\""}
+bokeh = {version = ">=3.1.0", optional = true, markers = "extra == \"diagnostics\""}
+click = ">=8.1"
+cloudpickle = ">=3.0.0"
+dask-expr = {version = ">=1.1,<1.2", optional = true, markers = "extra == \"dataframe\""}
+distributed = {version = "2024.9.0", optional = true, markers = "extra == \"distributed\""}
 fsspec = ">=2021.09.0"
-importlib-metadata = ">=4.13.0"
+importlib-metadata = {version = ">=4.13.0", markers = "python_version < \"3.12\""}
 jinja2 = {version = ">=2.10.3", optional = true, markers = "extra == \"diagnostics\""}
 lz4 = {version = ">=4.3.2", optional = true, markers = "extra == \"complete\""}
-numpy = {version = ">=1.21", optional = true, markers = "extra == \"array\" or extra == \"dataframe\""}
+numpy = {version = ">=1.24", optional = true, markers = "extra == \"array\""}
 packaging = ">=20.0"
-pandas = {version = ">=1.3", optional = true, markers = "extra == \"dataframe\""}
-partd = ">=1.2.0"
-pyarrow = {version = ">=7.0", optional = true, markers = "extra == \"complete\""}
+pandas = {version = ">=2.0", optional = true, markers = "extra == \"dataframe\""}
+partd = ">=1.4.0"
+pyarrow = {version = ">=14.0.1", optional = true, markers = "extra == \"complete\""}
 pyyaml = ">=5.3.1"
 toolz = ">=0.10.0"
 
 [package.extras]
-array = ["numpy (>=1.21)"]
-complete = ["dask[array,dataframe,diagnostics,distributed]", "lz4 (>=4.3.2)", "pyarrow (>=7.0)"]
-dataframe = ["numpy (>=1.21)", "pandas (>=1.3)"]
-diagnostics = ["bokeh (>=2.4.2)", "jinja2 (>=2.10.3)"]
-distributed = ["distributed (==2023.5.1)"]
-test = ["pandas[test]", "pre-commit", "pytest", "pytest-cov", "pytest-rerunfailures", "pytest-xdist"]
+array = ["numpy (>=1.24)"]
+complete = ["dask[array,dataframe,diagnostics,distributed]", "lz4 (>=4.3.2)", "pyarrow (>=14.0.1)"]
+dataframe = ["dask-expr (>=1.1,<1.2)", "dask[array]", "pandas (>=2.0)"]
+diagnostics = ["bokeh (>=3.1.0)", "jinja2 (>=2.10.3)"]
+distributed = ["distributed (==2024.9.0)"]
+test = ["pandas[test]", "pre-commit", "pytest", "pytest-cov", "pytest-rerunfailures", "pytest-timeout", "pytest-xdist"]
 
 [[package]]
 name = "dask-cloudprovider"
@@ -1301,6 +1298,25 @@ gcp = ["google-api-python-client (>=1.12.5)", "google-auth (>=1.23.0)"]
 hetzner = ["hcloud (>=1.10.0)"]
 
 [[package]]
+name = "dask-expr"
+version = "1.1.14"
+description = "High Level Expressions for Dask"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "dask_expr-1.1.14-py3-none-any.whl", hash = "sha256:86a59c51a84d88b6a653f5b4e2c578213a349a963206dcd29219e4826560ada2"},
+    {file = "dask_expr-1.1.14.tar.gz", hash = "sha256:c67c0c190d933e253f85674da71615f23ed8ba08f3abcc0cd160080643feb40a"},
+]
+
+[package.dependencies]
+dask = "2024.9.0"
+pandas = ">=2"
+pyarrow = ">=14.0.1"
+
+[package.extras]
+analyze = ["crick", "distributed"]
+
+[[package]]
 name = "dask-glm"
 version = "0.3.2"
 description = "Generalized Linear Models with Dask"
@@ -1325,13 +1341,13 @@ docs = ["jupyter", "nbsphinx", "notebook", "numpydoc", "sphinx", "sphinx-rtd-the
 
 [[package]]
 name = "dask-ml"
-version = "2023.3.24"
+version = "2024.4.4"
 description = "A library for distributed and parallel machine learning"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "dask-ml-2023.3.24.tar.gz", hash = "sha256:96c090db6d32836536e3f09ca64deb599e864587aa8e3d4d2c6b4af588733307"},
-    {file = "dask_ml-2023.3.24-py3-none-any.whl", hash = "sha256:ac34d556cdf3c4b25096d3f3806bbb2bed1ff7937f0c04e14c71d11a6c925055"},
+    {file = "dask_ml-2024.4.4-py3-none-any.whl", hash = "sha256:7fabb925ff7ac864bbd944ea7a15a35b68d4a3ffc43c54ae6041993b1d7d2a6e"},
+    {file = "dask_ml-2024.4.4.tar.gz", hash = "sha256:7956910a49e1e31944280fdb311adf245da11ef410d67deb7a05c67c7d0c4498"},
 ]
 
 [package.dependencies]
@@ -1436,31 +1452,31 @@ files = [
 
 [[package]]
 name = "distributed"
-version = "2023.5.1"
+version = "2024.9.0"
 description = "Distributed scheduler for Dask"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "distributed-2023.5.1-py3-none-any.whl", hash = "sha256:16ef990b8e95ac0a26b0bc93c70be473d5471bacb496acaed6eabdd2bf273221"},
-    {file = "distributed-2023.5.1.tar.gz", hash = "sha256:a5c4ffcaabfcf8fd32ef79f6ead17108b248baba25c9e6fb305a9904ad6e5229"},
+    {file = "distributed-2024.9.0-py3-none-any.whl", hash = "sha256:d3a6407efffd3ab70a7f3a068be0f15c7ba36adc4fc666ed3d3505ced2c79cbe"},
+    {file = "distributed-2024.9.0.tar.gz", hash = "sha256:cb5f76ff230fc2249b15b0a66da46982e23249e5d8389c16dfe427e598b71c57"},
 ]
 
 [package.dependencies]
 click = ">=8.0"
-cloudpickle = ">=1.5.0"
-dask = "2023.5.1"
+cloudpickle = ">=3.0.0"
+dask = "2024.9.0"
 jinja2 = ">=2.10.3"
 locket = ">=1.0.0"
-msgpack = ">=1.0.0"
+msgpack = ">=1.0.2"
 packaging = ">=20.0"
-psutil = ">=5.7.2"
-pyyaml = ">=5.3.1"
+psutil = ">=5.8.0"
+pyyaml = ">=5.4.1"
 sortedcontainers = ">=2.0.5"
 tblib = ">=1.6.0"
-toolz = ">=0.10.0"
-tornado = ">=6.0.4"
-urllib3 = ">=1.24.3"
-zict = ">=2.2.0"
+toolz = ">=0.11.2"
+tornado = ">=6.2.0"
+urllib3 = ">=1.26.5"
+zict = ">=3.0.0"
 
 [[package]]
 name = "distro"
@@ -4350,13 +4366,13 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "prometheus-client"
-version = "0.20.0"
+version = "0.21.0"
 description = "Python client for the Prometheus monitoring system."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "prometheus_client-0.20.0-py3-none-any.whl", hash = "sha256:cde524a85bce83ca359cc837f28b8c0db5cac7aa653a588fd7e84ba061c329e7"},
-    {file = "prometheus_client-0.20.0.tar.gz", hash = "sha256:287629d00b147a32dcb2be0b9df905da599b2d82f80377083ec8463309a4bb89"},
+    {file = "prometheus_client-0.21.0-py3-none-any.whl", hash = "sha256:4fa6b4dd0ac16d58bb587c04b1caae65b8c5043e85f778f42f5f632f6af2e166"},
+    {file = "prometheus_client-0.21.0.tar.gz", hash = "sha256:96c83c606b71ff2b0a433c98889d275f51ffec6c5e267de37c7a2b5c9aa9233e"},
 ]
 
 [package.extras]
@@ -6406,4 +6422,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "fbe61e1d2c6c2f6dd5be84150f8e2dd1ef5110c88f85ee6725b01ea0b8ef02c6"
+content-hash = "89ed10fa865e2e9e096ea89256bde074bf2d399330787861d71461307079df46"
