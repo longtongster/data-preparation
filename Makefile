@@ -29,6 +29,10 @@ guard-%:
 process-data: up
 	$(DOCKER_COMPOSE_EXEC) python ./cybulde/process_data.py
 
+## check config
+check-config: up
+	$(DOCKER_COMPOSE_EXEC) python ./cybulde/process_data.py
+
 ## Call entrypoint
 get-data: up
 	$(DOCKER_COMPOSE_EXEC) python ./cybulde/utils/data_utils.py
