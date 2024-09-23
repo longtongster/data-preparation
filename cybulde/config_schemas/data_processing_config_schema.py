@@ -7,12 +7,12 @@ from cybulde.utils.aws_secret import get_secret
 @dataclass
 class DataProcessingConfig:
     version: str = "1" #MISSING
-    data_local_save_dir = "./data/raw"
-    dvc_remote_repo = "git@github.com:longtongster/project_template.git"
-    dvc_data_folder = "./data/raw"
-    github_user_name = "longtongster"
-    github_access_token = "no_way"
-
+    data_local_save_dir: str = "./data/raw"
+    dvc_remote_repo: str = "https://github.com/longtongster/project_template.git"
+    dvc_data_folder: str = "./data/raw"
+    github_user_name: str = "longtongster"
+    github_access_token = get_secret()
+    print(github_access_token)
 
 
 def setup_config() -> None:

@@ -37,5 +37,3 @@ def get_secret():
 
     # Your code goes here.
     return json_secret['github_token']
-
-get_secret()
