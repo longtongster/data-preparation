@@ -16,12 +16,12 @@ def process_data(config: DataProcessingConfig) -> None:
 
     #print(config.version, data_local_save_dir, dvc_remote_repo, dvc_data_folder, github_user_name, github_access_token, github_access_token)
 
-    run_command(config.version, 
-                data_local_save_dir = config.data_local_save_dir, 
-                dvc_remote_repo = config.dvc_remote_repo, 
-                dvc_data_folder = config.dvc_data_folder, 
-                github_user_name = config.github_user_name, 
-                github_access_token = config.github_access_token)
+    # run_command(config.version, 
+    #             data_local_save_dir = config.data_local_save_dir, 
+    #             dvc_remote_repo = config.dvc_remote_repo, 
+    #             dvc_data_folder = config.dvc_data_folder, 
+    #             github_user_name = config.github_user_name, 
+    #             github_access_token = config.github_access_token)
 
 
 if __name__ == "__main__":
