@@ -2,7 +2,7 @@ from hydra.core.config_store import ConfigStore
 from pydantic.dataclasses import dataclass
 from omegaconf import MISSING
 
-from cybulde.utils.aws_secret import get_secret 
+#from cybulde.utils.aws_secret import get_secret 
 from cybulde.config_schemas.data_processing import dataset_readers_schema
 
 @dataclass
@@ -19,6 +19,7 @@ class DataProcessingConfig:
 
 
 def setup_config() -> None:
+    dataset_readers_schema.setup_config()
     cs = ConfigStore.instance()
     cs.store(name="data_processing_config_schema", node=DataProcessingConfig)
     
